@@ -5,30 +5,45 @@ const item4 = document.querySelector('.item_4');
 const item5 = document.querySelector('.item_5');
 const item6 = document.querySelector('.item_6');
 
-item1.onclick = function() {
-  item1.style.backgroundColor = '#182339';
-};
+let item1animation = anime({
+  targets: item1,
+  backgroundColor: '#182339',
+  loop: true,
+  duration: 1000,
+  easing: 'easeInOutSine',
+  direction: 'alternate'
+});
 
-item2.onclick = function() {
-  item2.style.transform = 'scale(2) rotate(45deg)';
-};
+let item2animation = anime({
+  targets: item2,
+  rotate: 45,
+  scale: 2,
+  loop: true,
+  duration: 1000,
+  easing: 'easeInOutSine',
+  direction: 'alternate',
+});
 
 // черный прямоугольник
 let item3animation = anime({
   targets: item3,
   rotate: [ -45, 45 ],
-  autoplay: false
+  loop: true,
+  duration: 1000,
+  easing: 'easeInOutSine',
+  direction: 'alternate'
 });
-item3.onclick = item3animation.play;
 
 // шар
 let item5animation = anime({
   targets: item5,
   translateX: '100%',
-  autoplay: false,
-  easing: 'easeInOutQuad'
+  easing: 'easeInOutQuad',
+  loop: true,
+  duration: 1000,
+  easing: 'easeInOutSine',
+  direction: 'alternate'
 });
-item5.onclick = item5animation.play;
 
 //желтый прямоугольник
 let item4animation = anime({
@@ -36,12 +51,25 @@ let item4animation = anime({
   rotate: [ 45, 45 ],
   translateY: '-100%',
   translateX: '-20%',
-  autoplay: false,
+  loop: true,
+  duration: 1000,
+  easing: 'easeInOutSine',
+  direction: 'alternate'
 });
-item4.onclick = item4animation.play;
 
 //треугольник
-item6.onclick = function() {
-  item6.style.transform = 'scale(2) rotate(45deg)',
-  item6.borderRadius = '50%';
-};
+let item6animation = anime({
+  targets: item6,
+  rotate: [ -130, 45 ],
+  borderLeftWidth: [50, 0],
+  borderRightWidth: [50, 0],
+  borderBottomWidth: [150, 0],
+  width: [0, 100],
+  height: [0, 100],
+  borderRadius: '50%',
+  backgroundColor: '#24375B',
+  loop: true,
+  duration: 1000,
+  easing: 'easeInOutSine',
+  direction: 'alternate'
+});
